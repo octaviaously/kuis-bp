@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Nomer3 {
+    public static void main(String[] args) {
+    String gudang[][] = new String[5][10];
+    String Barang, Stock, Jenis,Lama, Baru;
+    Scanner s = new Scanner(System.in);
+    int harga, Kuantitas = 0, pilih;
+    int h=0, k=0;
+do{
+   System.out.println("\nGudang Barang");
+   System.out.println("1. Stock Barang"); 
+   System.out.println("2. Harga Barang"); 
+   System.out.print("Pilih=");
+   pilih = s.nextInt();
+   switch (pilih){
+       case 1:
+           System.out.print("Masukkan Barang = ");
+           Barang = s.next();
+           boolean kosong=false;
+           do{
+            System.out.print("Jumlah Barang = ");
+            Kuantitas = s.nextInt();
+            if(gudang[Barang]==null){
+                kosong=true;
+            }
+            else{
+                System.out.println("Barang tersedia..");
+            }
+            }while(kosong!=true);
+            Jenis[Barang] = Lama;
+            System.out.println("Barang sudah ditambahkan");
+            break;
+  }         
+ }   
+}
