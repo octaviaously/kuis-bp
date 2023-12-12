@@ -1,0 +1,42 @@
+import java.util.Scanner;
+public class kuisSearching {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner s = new Scanner(System.in);
+        String barang[] = {"Beras","Gula","Kecap","Saus","Lada","Tepung","Telur","Minyak","Garam"};
+        boolean ketemu;
+        int i, pilih=1;
+        do{
+            System.out.println("\nPencarian barang di gudang sembako");
+            System.out.print("Daftar Barang : ");
+            for (i=0; i<barang.length; i++){
+                System.out.print(barang[i]+" ");
+            }
+            ketemu=false;
+            System.out.println("");
+            System.out.print("Cari Pemilik = ");
+            String cari = s.next();
+            for (i=0; i<barang.length; i++){
+                if(barang[i].compareToIgnoreCase(cari)==0){
+                    ketemu=true;
+                    break;
+                }
+            }
+            if(ketemu==true){
+                System.out.println("Ada di rak nomor "+(i+1));
+            }else{
+                System.out.println("Barang tidak ditemukan");
+            }
+            System.out.println("Cari lagi?");
+            System.out.println("1. Ya\n2. Tidak");
+            System.out.println("Jawab = ");
+            pilih = s.nextInt();
+        }while (pilih==1);
+        System.out.println("Terima kasih~");
+    }
+    
+}
