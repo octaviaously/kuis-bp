@@ -1,0 +1,75 @@
+import java.util.Arrays;
+
+public class no1_sorting {
+    String nama;
+    int harga;
+
+    public no1_sorting(String nama, int harga) {
+        this.nama = nama;
+        this.harga = harga;
+    }
+
+    public static void main(String[] args) {
+        no1_sorting[] barang = {
+                new no1_sorting("Beras", 15000),
+                new no1_sorting("gula", 20000),
+                new no1_sorting("Tepung", 10000),
+                new no1_sorting("Telur", 25000),
+                new no1_sorting("Minyak", 40000),
+        };
+
+        
+        System.out.println("Data Awal:");
+        for (no1_sorting b : barang) {
+            System.out.println(b.nama + " " + b.harga);
+        }
+
+        // Berdasarkan harga tertinggi
+        for (int i = 0; i < barang.length; i++) {
+            for (int j = 0; j < barang.length - 1; j++) {
+                if (barang[j].harga < barang[j + 1].harga) {
+                    no1_sorting temp = barang[j];
+                    barang[j] = barang[j + 1];
+                    barang[j + 1] = temp;
+                }
+            }
+        }
+        System.out.println("\nData setelah diurutkan berdasarkan harga tertinggi:");
+        for (no1_sorting b : barang) {
+            System.out.println(b.nama + " " + b.harga);
+        }
+
+        // Berdasarkan harga terendah
+        for (int i = 0; i < barang.length; i++) {
+            for (int j = 0; j < barang.length - 1; j++) {
+                if (barang[j].harga > barang[j + 1].harga) {
+                    no1_sorting temp = barang[j];
+                    barang[j] = barang[j + 1];
+                    barang[j + 1] = temp;
+                }
+            }
+        }
+        System.out.println("\nData setelah diurutkan berdasarkan harga terendah:");
+        for (no1_sorting b : barang) {
+            System.out.println(b.nama + " " + b.harga);
+        }
+
+        // Berdasarkan abjad
+        for (int i = 0; i < barang.length; i++) {
+            for (int j = 0; j < barang.length - 1; j++) {
+                if (barang[j].nama.compareTo(barang[j + 1].nama) > 0) {
+                    no1_sorting temp = barang[j];
+                    barang[j] = barang[j + 1];
+                    barang[j + 1] = temp;
+                }
+            }
+        }
+        System.out.println("\nData setelah diurutkan berdasarkan nama:");
+        for (no1_sorting b : barang) {
+            System.out.println(b.nama + " " + b.harga);
+        }
+
+       
+       
+    }
+}
